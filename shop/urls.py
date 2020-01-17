@@ -6,9 +6,9 @@ register_converter(FourDigitYearConverter, 'yyyy')
 
 app_name="shop"
 
-urlpatterns={
+urlpatterns=[
     path('archives/<yyyy:year>', views.archives_year),
     path('pillow/', views.response_pillow_image),
     
     
-}
+]
