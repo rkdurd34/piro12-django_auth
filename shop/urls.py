@@ -9,6 +9,7 @@ app_name="shop"
 urlpatterns=[
     path('archives/<yyyy:year>', views.archives_year),
     path('pillow/', views.response_pillow_image),
+    path('', views.item_list)
     
     
 ]
