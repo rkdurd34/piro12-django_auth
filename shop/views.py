@@ -33,3 +33,6 @@ def response_pillow_image(request):
     response = HttpResponse(content_type='image/png')
     canvas.save(response, format='PNG') # HttpResponse 의 file-like 특성 활용 return response
     return response
+
+def throw(request):
+    return render(request,'throw.html')
