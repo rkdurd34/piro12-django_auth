@@ -1,4 +1,4 @@
-#!/Users/kang/Downloads/python/django-ask/myvenv/bin/python3
+#!/Users/kang/Downloads/python/django-ask2/myvenv/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
