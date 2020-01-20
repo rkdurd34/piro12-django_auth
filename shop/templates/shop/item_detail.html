@@ -4,6 +4,12 @@
 {{ block.super }}
     <h2>{{ item.name }}</h2>
 
+    {% if item.photo %}
+        <img src="{{ item.photo.url }}" style="max-width:100%">
+        {{ item.photo.url }}
+        {{ item.photo.path }}
+    {% endif %}
+
     가격 : {{ item.price|intcomma }}원
 
     {% if item.desc %}
