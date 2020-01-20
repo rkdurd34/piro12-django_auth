@@ -1,11 +1,7 @@
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Blog for Ask Company</title>
+{% extends "shop/layout.html" %}
+{% block content %}
 
-</head>
-<body>
-<h1>Ask Company</h1>
+
 <form action="" method="GET">
     <input type="text" name="q" value="{{ q }}">
     <input type="submit" value="search">
@@ -13,11 +9,14 @@
 <ul>
     {% for item in item_list %}
         <li>
-            {{ item.name }}
-            {{ item.price }}
-            {{ item.desc }}
+            <a href="/shop/{{ item.id }}">
+                {{ item.name }}
+            </a>
+            (pk = ({{ item.id }}))<br>
+            가격 : {{ item.price }}<br>
+
+            설명 : {{ item.desc }}<br>
         </li>
     {% endfor %}
 </ul>
-</body>
-</html>
+{% endblock %}
