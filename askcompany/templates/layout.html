@@ -1,4 +1,4 @@
-{% load static %}
+{% load static fresh_static%}
 
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@
 
 {% block extra_head %}
 
-    <link rel="stylesheet" href="{% static "main.css"%}">
+    <link rel="stylesheet" href="{% fresh_static "main.css"%}">
 {% endblock %}
 
 </head>

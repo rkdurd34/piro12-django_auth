@@ -1,13 +1,14 @@
 {% extends "shop/layout.html" %}
 {% load humanize %}
+
 {% block content %}
 {{ block.super }}
     <h2>{{ item.name }}</h2>
 
     {% if item.photo %}
-        <img src="{{ item.photo.url }}" style="max-width:100%">
-        {{ item.photo.url }}
-        {{ item.photo.path }}
+        <img src="{{ item.photo.url }}" style="max-width:100%"><br>
+        {{ item.photo.url }}<br>
+        {{ item.photo.path }}<br>
     {% endif %}
 
     가격 : {{ item.price|intcomma }}원
