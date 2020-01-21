@@ -7,7 +7,7 @@ register_converter(FourDigitYearConverter, 'yyyy')
 app_name="shop"
 
 urlpatterns=[
-    path('archives/<yyyy:year>', views.archives_year, name = 'archives_year'),
+    path('archives/<yyyy:year>', views.archives_year, name = 'archi  ves_year'),
     path('pillow/', views.response_pillow_image ),
     path('', views.item_list,  name = 'item_list'),
     path('<int:pk>', views.item_detail, name="item_detail"),
