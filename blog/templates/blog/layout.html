@@ -1,13 +1,27 @@
 {% extends "layout.html" %}
-{% load static fresh_static%}
+{% load static fresh_static %}
 
-{% block title %}Blog by Ask Company{% endblock %}
+{% block title %}
+    Blog by Ask Company
+{% endblock %}
+
+
+
+
 {% block extra_head %}
 
     {{ block.super }}
     <link rel="stylesheet" href="{% fresh_static "blog/blog.css" %}">
 
 {% endblock %}
+
+{% block header %}
+    <h1>AskDjango Blog</h1>
+    회원가입 로그인 로그아웃
+    <hr>
+{% endblock %}
+
+
 {% block extra_body %}
     {{ block.super }}
 {% endblock %}

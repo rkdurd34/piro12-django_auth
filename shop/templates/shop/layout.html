@@ -4,7 +4,10 @@
 {% block title %}
     Shop by Ask Company
 {% endblock %}
-
+{% block header %}
+    {{ block.super }}
+    <a href="{% url "shop:item_list" %}" class="header_askcompany"><h1>Ask Company</h1></a>
+{% endblock %}
 {% block extra_head %}
     {{ block.super }}
     <link rel="stylesheet" href="{% fresh_static "shop/shop.css" %}">

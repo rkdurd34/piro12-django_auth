@@ -1,4 +1,4 @@
-{% load static fresh_static%}
+{% load static fresh_static %}
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +17,10 @@
 
 
 <body>
-    <h1>Ask Company</h1>
+    {% block header %}
+
+    {% endblock %}
+
 
         {% block content %}
             슈퍼블락

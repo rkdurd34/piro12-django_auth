@@ -9,7 +9,7 @@
 <ul>
     {% for item in item_list %}
         <li>
-            <a href="{{ item.get_absolute_url }}">
+            <a href="{% url "shop:item_detail" item.pk %}">
                 {{ item.name }}
             </a>
             (pk = ({{ item.id }}))<br>

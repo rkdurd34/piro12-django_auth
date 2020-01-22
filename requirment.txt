@@ -1,6 +1,1 @@
-패키지들 설치 하는 리스트 쓰기
-ex) 
-django~=2.2.9
-django-extensions == 2.1.2
-django-debug-toolbar == 2.1
-pillow == 몰라
+-r reqs/prod_heroku.txt
