@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'shop',
     'blog',
     'common',
+    'accounts',
+
 ]
 
 MIDDLEWARE = [
@@ -128,5 +130,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+from django.urls import reverse_lazy
+# LOGIN_URL = '/accounts/login/'
+LOGIN_URL = reverse_lazy('login')
+#이걸 사용하는 이유는 세팅에서 리버스가 발동 되면 안되기 떄문!
+#LOGIN_REDIRECT_URL = reverse_lazy("profile")
 
 INTERNAL_IPS = ['127.0.0.1']

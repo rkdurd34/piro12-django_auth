@@ -8,31 +8,31 @@
 
 
 
-{% block extra_head %}
+    {% block extra_head %}
 
-    <link rel="stylesheet" href="{% fresh_static "main.css"%}">
-{% endblock %}
+        <link rel="stylesheet" href="{% fresh_static "main.css" %}">
+    {% endblock %}
 
 </head>
 
 
 <body>
-    {% block header %}
+{% block header %}
 
-    {% endblock %}
+{% endblock %}
 
 
-        {% block content %}
-            슈퍼블락
-        {% endblock %}
-    <hr/>
+{% block content %}
+    슈퍼블락
+{% endblock %}
+<hr/>
 
-    &copy; 2018.Ask Company.
+&copy; 2018.Ask Company.
 
-        {% block extra_body %}
-            <script src="{% static "main.js" %}"></script>
+{% block extra_body %}
+    <script src="{% static "main.js" %}"></script>
 
-        {% endblock %}
+{% endblock %}
 
 </body>
 </html>
