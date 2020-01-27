@@ -10,7 +10,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('blog.urls')),
     path('shop/', include('shop.urls')),
-    path('', lambda req: redirect('/blog/')),
+    path('', lambda req: redirect('blog:post_list'), name="root"),
     #path("accounts/", include('django.contrib.auth.urls')),
     path('accounts/', include("accounts.urls"))
 ]
