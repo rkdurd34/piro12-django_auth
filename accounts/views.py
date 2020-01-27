@@ -23,7 +23,9 @@ def signup(request):
         if form.is_valid():
             user = form.save()
             auth_login(request, user)  # 로그인 처리
+            next_url =  request.GET.get("next") or 'profile'
             return redirect("profile")
+            #next_url을 사용 하면 return redirect(next_url) 
             #return redirect(settings.LOGIN_URL)
     else:
         form = SignupForm()
@@ -37,7 +39,10 @@ class SignupView(CreateView):
     form_class = SignupForm
     template_name = "accounts/signup.html"
     def get_success_url(self):
-        return resolve_url('profile')
+        next_url = self.GET.get("next") or 'profile'
+        return resolve_url(next_url)
+        #return resolve_url('profile')
+        #next_url이 없을시에는 위에와 같이 활동
     def form_valid(self, form):
         user = form.save()
         auth_login(self.request, user)
