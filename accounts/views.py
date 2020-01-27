@@ -1,8 +1,12 @@
 from django.conf import settings
+from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from django.contrib.auth.views import PasswordChangeView
+from django.http import Http404
 from django.shortcuts import render, redirect, resolve_url
 from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy
 from django.views.generic import CreateView
 from django.contrib.auth import login as auth_login
 from accounts.forms import SignupForm
@@ -51,3 +55,11 @@ class SignupView(CreateView):
 
 signup = SignupView.as_view()
 # SignupForm 이름을 사용하는 이유는 앱내 forms.py 에서 UserCreationForm을 상속 받았기 떄문에 원래는 이거를 통해서 필드 수정 할려구함!
+class MyPasswordChangeView(PasswordChangeView):
+    success_url = reverse_lazy('profile')
+    template_name = "accounts/password_change_form.html"
+
+    def form_valid(self, form):
+        messages.info(self.request,"암호변경을 완료했습니다.")
+        return super().form_valid(form)
+#-----22--------이거는 url에서 길게 안하고!!!!!!!!클래스로 커스터마이
