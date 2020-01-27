@@ -135,6 +135,7 @@ from django.urls import reverse_lazy
 # LOGIN_URL = '/accounts/login/'
 LOGIN_URL = reverse_lazy('login')
 #이걸 사용하는 이유는 세팅에서 리버스가 발동 되면 안되기 떄문!
-#LOGIN_REDIRECT_URL = reverse_lazy("profile")
-
+LOGIN_REDIRECT_URL = reverse_lazy("profile")
+LOGOUT_REDIRECT_URL = reverse_lazy("login")
+#로그아웃 할 때 디폴트는 admin 로그아웃 페이지로 가게됨
 INTERNAL_IPS = ['127.0.0.1']
